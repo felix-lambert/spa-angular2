@@ -1,0 +1,42 @@
+<div>
+    <h1 class="text-center">The Bookmark App <small>Cozy Cloud</small></h1>
+
+    <form class="form-inline">
+        <div class="form-group">
+          <label for="search">Search</label>
+          <input [(ng-model)]="search" type="text" class="form-control" id="test">
+        </div>
+    </form>
+</div>
+<div class="container-fluid text-center">
+    <form #f="form" class="form-inline" name="form" (submit)="onSubmit(f.value)">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" ng-control="title" class="form-control" placeholder="Gargantua">
+      </div>
+      <div class="form-group">
+            <label>Lien</label>
+            <input type="text" ng-control="link" class="form-control" placeholder="https://fr.wikipedia.org/wiki/Gargantua">
+          </div>
+          <button type="submit" class="btn btn-default">Ajouter</button>
+        </div>
+    </form>
+</div>
+<br/>
+<div class="table-responsive text-center col-md-12" *ng-if="bookmarks">
+    <table class="table">
+        <!-- On rows -->
+        <tr class="active">
+            <td>Title</td>
+            <td>Link</td>
+            <td>Actions</td>  
+        </tr>
+        <tr *ng-for="#bookmark of getFilteredBookmarks()">
+            <td>{{bookmark.title}}</td>
+            <td>{{bookmark.url}}</td>
+            <td>
+                <button class="btn btn-default" (click)="onDelete(bookmark._id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+{
+  "name": "cozy-tutorial-angular2",
+  "version": "1.0.0",
+  "description": "Sample Angular 2 app",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.44",
+    "gulp": "~3.9.0",
+    "gulp-htmlbuild": "^0.4.1",
+    "gulp-typescript": "2.9.2"
+  }
+}
