@@ -3,6 +3,7 @@ This is a sample app that demonstrates some Angular2 features.
 To run it execute the following
 ```Bash
 npm install
+cd client
 gulp
 #in another terminal:
 node server.js
